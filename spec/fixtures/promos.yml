@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+central_park_download_sale:
+  name: 20% off
+  discount_type: percentage
+  discount_percentage: 20.0
+  product: central_park_download (VideoFormat)
+
+central_park_download_amount_sale:
+  name: $1 off
+  discount_type: amount
+  discount_amount_in_cents: 1000
+  product: central_park_download (VideoFormat)

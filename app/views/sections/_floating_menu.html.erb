@@ -1,0 +1,15 @@
+<div class="floating-menu">
+  <ul>    
+    <li class="<%=  'current_navigation' if controller_name == 'users' && action_name == 'cart' %>">      
+      <%= link_to "#{ '>' if controller_name == 'users' && action_name == 'cart'} Shopping Cart", cart_account_path %>
+    </li>
+    <li class="<%=  'current_navigation' if controller_name == 'users' && action_name == 'purchases' %>">      
+      <%= link_to "#{ '>' if controller_name == 'users' && action_name == 'purchases'} Purchases", purchases_account_path %>
+    </li>
+    <li class="<%=  'current_navigation' if controller_name == 'users' && action_name == 'information' %>">      
+      <%= link_to "#{ '>' if controller_name == 'users' && action_name == 'information'} Information", information_account_path %>
+    </li>    
+<%#= current_nav_item(/\A#{settings_account_path}\Z/) { link_to 'Settings', settings_account_path } %>
+  </ul>
+</div>
+<div class="clearfix">&nbsp;</div>

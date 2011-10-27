@@ -1,0 +1,43 @@
+<div id="login-download" style="display: none">
+  <div>
+    <h1>Become a Virtual Active Member.</h1>
+    <div id="error-message" style="display: none;padding-bottom: 5px;"></div>
+    <div class="login-content">
+      <h2 id="purchase-label">To purchase downloads you must be signed in.</h2>
+      <div class="left" id="register-form" style="vertical-align: middle;">
+        <ul>
+          <li>Track your purchases</li>
+          <li>Receive discount offers</li>
+          <li>Learn about new releases</li>
+        </ul>
+        <div class="button">
+          <input id="new-user" type="submit" class="f-button" name="join_va" value="join Virtual Active"></input>
+        </div>
+      </div>
+      <div class="right" >
+        <% form_remote_for :user_session, :url => ajax_create_session_path, :html => {:class => "typical"} do |f| -%>
+          <div>
+            <label>Email</label>
+          </div>
+          <div>
+            <%= f.text_field :email, :value => 'Email Address'%>
+          </div>
+          <div>
+            <label>Password</label>
+          </div>
+          <div>
+            <%= f.password_field :password, :value => 'password' %>
+          </div>
+          <div>
+            <input type="hidden" name="login_checkout" value="true"/>
+          </div>
+          <div class="button-right">
+            <label>&nbsp;</label>
+            <%= f.submit 'Login', :class => 'f-button' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="clear-fix">&nbsp;</div>-->

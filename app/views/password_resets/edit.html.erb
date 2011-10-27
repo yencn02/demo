@@ -1,0 +1,21 @@
+<div id="password-reset" class="content partial">
+  <div class="red-box list-browser">
+    <div id="title" class="clearfix">
+      <h1 class="page-title">Update your password</h1>
+    </div>
+    <div class="introdution">Please enter the new password below and then press "Update Password".</div>
+
+    <% form_tag password_reset_path, :method => :put do %>
+    <div><%= label_tag :password %></div><br/>
+    <div><%= password_field_tag :password %></div><br/>
+    <div><%= label_tag :password_confirmation %></div><br/>
+    <div><%= password_field_tag :password_confirmation %></div><br/>
+      <%= submit_tag "Update Password", :class => "blue-button" %>
+    <% end %>
+  </div>
+</div>
+
+<div id="videos-index-sidebar" class="sidebar">
+  <%= render :partial => 'sections/cart', :locals => {:items => @cart_items} %>
+  <div class="clearfix">&nbsp;</div>
+</div>

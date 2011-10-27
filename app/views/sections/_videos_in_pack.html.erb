@@ -1,0 +1,13 @@
+<div class="section">
+  <div class="header clearfix">
+    <span class="left">Other Videos in this Pack</span>
+  </div>
+
+  <% @video_pack.videos.each_with_index do |video, index| -%>
+  <div class="video">
+    <div style="font-size: 2em; padding: 5px 0px 0px 5px;"><%= link_to index + 1, video_pack_path(@video_pack, :vi => index) %>.</div>
+    <div class="title"><%= link_to video.title, video_pack_path(@video_pack, :vi => index) %></div>
+    <div class="length">length: <%= duration_from_seconds video.duration_in_seconds %></div>
+  </div>
+  <% end -%>
+</div>

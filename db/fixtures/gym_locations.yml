@@ -1,0 +1,188 @@
+location_1:
+  location_name: YMCA - Northeast Family
+  address1: 2100 Orchard Ln
+  city: White Bear Lake
+  state: MN
+  zipcode: 55110
+  phone: (651) 777-8103
+  website: http://www.ymcatwincities.org
+
+location_2:
+  location_name: YMCA - BLAISDEL PRIMARY
+  address1: 3335 Blaisdell Ave. S.
+  city: Minneapolis
+  state: MN
+  zipcode: 55408
+  phone: 612-827-5401
+  website: http://www.ymcatwincities.org
+
+location_3:
+  location_name: YMCA - Emma B. Howe
+  address1: 8950 Springbrook Drive
+  city: Coon Rapids
+  state: MN
+  zipcode: 55433
+  phone: 763-785-7882
+  website: http://www.ymcatwincities.org
+
+location_4:
+  location_name: YMCA - MN Valley
+  address1: 13850 Portland Ave. South
+  city: Burnsville
+  state: MN
+  zipcode: 55337
+  phone: 952-898-9622
+  website: http://www.ymcatwincities.org
+
+location_5:
+  location_name: YMCA - Minnetonka
+  address1: 12301 Ridgedale Drive
+  city: Minnetonka
+  state: MN
+  zipcode: 55305
+  phone: 952-544-7708
+  website: http://www.ymcatwincities.org
+
+location_6:
+  location_name: YMCA - South Family
+  address1: 150 Thompson Ave East
+  city: West St. Paul
+  state: MN
+  zipcode: 55118
+  phone: 651-457-0048
+  website: http://www.ymcatwincities.org
+
+location_7:
+  location_name: YMCA - Southeast
+  address1: 2175 Radio Drive
+  city: Woodbury
+  state: MN
+  zipcode: 55125
+  phone: 651-731-9507
+  website: http://www.ymcatwincities.org
+
+location_8:
+  location_name: Wisconsin Athletic Club
+  address1: 1939 S 108th St
+  city: Milwaukee
+  state: WI
+  zipcode: 53227
+  phone: (414) 321-2500
+  website: http://www.thewac.com
+
+location_9:
+  location_name: Sunset Hills Country Club
+  address1: 4155 Erbes Road
+  city: Thousand Oaks
+  state: CA
+  zipcode: 91360
+  phone: 805.495.6484
+  website: http://www.americangolf.com/CA/thousand-oaks-sunset-hills-country-club
+
+location_10:
+  location_name: Biff's Around the Clock Fitness
+  address1: 718 S Mustang Rd
+  city: Yukon
+  state: OK
+  zipcode: 73099
+  phone: (405) 265-3514
+  website: http://www.biffsfitness.com
+
+location_11:
+  location_name: Gainesville Health and Fitness Ctr
+  address1: 4820 Newberry Road
+  city: Gainesville
+  state: FL
+  zipcode: 32607
+  phone: 352-377-4955
+  website: http://www.ghfc.com
+
+location_12:
+  location_name: Anytime Fitness - Greer
+  address1: 955 W. Wade Hampton Blvd.
+  city: Greer
+  state: SC
+  zipcode: 29650
+  phone: (864) 879-7972
+  website: http://www.anytimefitness.com
+
+location_13:
+  location_name: The Grand Health and Racquet
+  address1: 3030 East 91st
+  city: Tulsa
+  state: OK
+  zipcode: 74137
+  phone: (918) 298-9500
+  website: http://www.grandhealthandracquet.com
+
+location_14:
+  location_name: Franklin Health and Fitness Center
+  address1: 1214 E Main St
+  city: Franklin
+  state: NC
+  zipcode: 28734
+  phone: (828) 369-5608
+  website: http://www.franklinfitnesscenter.com
+
+location_15:
+  location_name: SNAP Fitness - Clifton Park
+  address1: 821 Main St.
+  city: Clifton Park
+  state: NY
+  zipcode: 12065
+  phone: (518) 265-6610
+  website: http://www.snapfitness.com
+
+location_16:
+  location_name: Anytime Fitness - Kempsville
+  address1: 5300 Kempsriver Dr.
+  city: Virginia Beach
+  state: VA
+  zipcode: 23464
+  phone: (757) 233-0240
+  website: http://www.anytimefitness.com
+
+location_17:
+  location_name: SNAP Fitness - Kent
+  address1: 2500 Ohio 59
+  city: Kent
+  state: OH
+  zipcode: 44240
+  phone: 330-474-2910
+  website: http://www.snapfitness.com
+
+location_18:
+  location_name: YMCA - North Canton
+  address1: 1402 W Maple St
+  city: North Canton
+  state: OH
+  zipcode: 44720
+  phone: (330) 492-2229
+  website: http://www.ymcastark.org
+
+location_19:
+  location_name: YMCA - Ardmore Family
+  address1: 920 15th Ave NW
+  city: Ardmore
+  state: OK
+  zipcode: 73401
+  phone: (580) 223-3990
+  website: http://www.ardmorefamilyymca.org
+
+location_20:
+  location_name: YMCA - Greater Indianapolis
+  address1: 615 N Alabama St #200
+  city: Indianapolis
+  state: IN
+  zipcode: 46204
+  phone: (317) 266-9622
+  website: http://www.indymca.org
+
+
+location_21:
+  location_name: YMCA - Greater Indianapolis
+  address1: 1025 N Jameson St
+  city: Lebanon
+  state: IN
+  zipcode: 46052
+  phone: (765) 482-5960 - (317) 266-9622

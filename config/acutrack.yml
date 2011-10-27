@@ -1,0 +1,49 @@
+development:
+  dealer_id: DI106K
+  dealer_password: 1218VAM101820101830
+  token_key: CUS-VAMEDIA10182010
+  live_transaction: False
+  order_notification_url: https://acuservices.acutrack.com/productions1/odorders.aspx
+  shipping_type:
+    domestic: 4
+    international: 6
+
+staging:
+  dealer_id: DI106K
+  dealer_password: 1218VAM101820101830
+  token_key: CUS-VAMEDIA10182010
+  live_transaction: False
+  order_notification_url: https://acuservices.acutrack.com/sandbox/odorders.aspx
+  shipping_type:
+    domestic: 4
+    international: 6
+
+test:
+  dealer_id: DI102J
+  dealer_password: OrdTest08
+  token_key: Cus-193081202
+  live_transaction: False
+  order_notification_url: https://acuservices.acutrack.com/sandbox/odorders.aspx
+  shipping_type:
+    domestic: 4
+    international: 6
+
+cucumber:
+  dealer_id: DI102J
+  dealer_password: OrdTest08
+  token_key: Cus-193081202
+  live_transaction: False
+  order_notification_url: https://acuservices.acutrack.com/sandbox/odorders.aspx
+  shipping_type:
+    domestic: 4
+    international: 6
+
+production:
+  dealer_id: DI106K
+  dealer_password: 1218VAM101820101830
+  token_key: CUS-VAMEDIA10182010
+  live_transaction: True
+  order_notification_url: https://acuservices.acutrack.com/productions1/odorders.aspx
+  shipping_type:
+    domestic: 4
+    international: 6

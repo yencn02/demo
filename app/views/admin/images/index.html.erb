@@ -1,0 +1,32 @@
+<% if flash[:notice] %>
+  <div id="errorExplanation" style="background-color:orange;color:#FFFFFF;font-size:12px;padding:0.75em 0.75em 0.5em;">
+    <p>There were problems with the following fields:</p>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% form_tag '/admin/images/upload_image', :multipart => true do %>
+  <p><b>Default background image:</b></p>
+  <p>
+    <%= file_field "image", "default" %>
+  </p>
+  <p><b>Background image for iPad:</b></p>
+  <p>
+    <%= file_field "image", "ipad" %>
+  </p>
+  <p>
+    <%= submit_tag "Upload" %>
+  </p>
+  <br/><br/>
+  <% if @default %>
+    <strong>Default background image:</strong><br/><br/>
+    <img src="<%= @default %>?time=<%= Time.now.to_i %>" alt="background" height="500"/>
+    <br/>
+  <% end %>
+  <br/><br/>
+  <% if @ipad %>
+    <strong>Background image for iPad:</strong><br/><br/>
+    <img src="<%= @ipad %>?time=<%= Time.now.to_i %>" alt="background" height="500"/>
+  <% end %>
+
+<% end %>

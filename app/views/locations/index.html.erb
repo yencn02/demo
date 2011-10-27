@@ -1,0 +1,35 @@
+<% content_for :javascripts do %>
+  <%= GMap.header %>
+  <%#*<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>%>
+<% end %>
+
+<div id="locations-search" class="content full">
+  <div class="red-box">
+    <div style="width: 100%" id="location-title">
+      <span>Find a Virtual Active Location</span>
+      <img id="spinner" src="/images/ajax-loader-grey.gif" alt="" style="display: none;"/>
+    </div>
+    <div id="search-box">
+      <% form_remote_tag :url => search_locations_path, :loading =>"Location.showSpinner();", :success => "Location.hideSpinner();", :html => {:id => "location-form"} do -%>
+        <div class="text">
+          <%= text_field_tag :search, params[:search] || 'Enter a Zip Code', :alt => 'Enter a Zip Code', :class => 'default-value', :id => 'location-search', :size => '21' %>
+        </div>
+        <div class="button">
+          <%= submit_tag 'Search', :class => 'blue-button' %>
+        </div>
+      <% end -%>
+
+      <div class="clearfix">&nbsp;</div>
+
+      <div id="results" class="grey-box">
+        <%= render :partial => "locations" %>
+      </div>
+    </div>
+    <div id="map">
+      <%= @map.div(:width => 595, :height => 568) %>
+      <div id='route_div' style='width:595px; height: 568px; font-size:10px; display: none;'></div>
+    </div>
+  </div>
+</div>
+
+<%= @map.to_html %>

@@ -1,0 +1,39 @@
+<div class="clearfix">&nbsp;</div>
+<div id="pages-facility" class="content partial site-info">
+  <div class="red-box">
+    <h1 class="page-title" style="width: 592px;">Become a Virtual Active Facility</h1>
+    <p class="introduction">
+      Virtual Active's commercial products provide health clubs and fitness facilities with powerful interactive cardio entertainment solutions, setting them apart from their local competition.  Please visit our partners to learn more about Virtual Active commercial products.
+    </p>
+
+    <div class="entry">
+      <div class="logo" id="matrix">
+        <img src="/images/logo-matrix.png" alt="logo" />
+      </div>
+      <div class="description grey-box">
+        <h2>Virtual Active by Matrix - Premium Cardio Line</h2>
+        <p>Add Virtual Active's stunning scenery to Matrix Fitness's top-end line of cardio equipment, and you've got Virtual Active by Matrix.  It's interactive: the user's speed affects the video speed, and the difficulty of the trail determines the incline or resistance of the workout, automatically.  It's immersive: ambient sounds of waterfalls and wildlife are mixed with built-in music or the user's own music.  Get the outdoor experience on treadmills, ellipticals, A-trainers, steppers, and cycles with Virtual Active by Matrix.</p>
+        <input id="matrixfitness" type="button" class="blue-button link-button" value="Learn more" name="learn more"/>
+      </div>
+    </div>
+
+    <div class="entry last">
+      <div class="logo" id="icg">
+        <img src="/images/logo-icg.jpg" alt="logo" />
+      </div>
+      <div class="description grey-box">
+        <h2>The MyRideV3 by IndoorCycling Group – Virtual Indoor Cycling Station</h2>
+        <p>The MyRideV3 brings Virtual Active's stunning scenery to an indoor cycling experience.  It's a brilliant 17-inch touchscreen media player, and it's loaded with HD content – just hop on a spin bike and cycle along to the footage.  Train indoors with MyRide studio content, a one-on-one spin class.  Get outdoors with MyScape, Virtual Active's stunning trail footage.  Or get both with MySportif: Virtual Active scenery paired with coaching and technical training from ICG master trainers.  You can grab a pre-built workout or make your own, from four minutes to four hours.  With millions of possible workouts, the MyRideV3 can enhance any cardio floor or spin studio.  Start your gym on an endless ride with the MyRideV3.</p>
+        <input id="myridev3" type="button" class="blue-button link-button" value="Learn more" name="learn more"/>        
+      </div>
+    </div>
+
+    <div class="clearfix">&nbsp;</div>
+  </div>
+</div>
+
+<div id="pages-facility-sidebar" class="sidebar">
+ <% if current_user_session.blank? %>
+   <%= render :partial => 'sections/login' %>
+ <% end %>
+</div>

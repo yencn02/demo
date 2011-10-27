@@ -1,0 +1,43 @@
+<div>
+  <label>&nbsp;</label><%= check_box_tag 'use_billing_address'%> <span class="shadow">Use my billing address</span>
+</div>
+<div>
+  <%= form.label :first_name, "First Name" %>
+  <%= form.text_field :first_name %>
+</div>
+
+<div>
+  <%= form.label :last_name, "Last Name" %>
+  <%= form.text_field :last_name %>
+</div>
+
+<div>
+  <%= form.label :address1, "Street Address 1" %>
+  <%= form.text_field :address1 %>
+</div>
+
+<div>
+  <%= form.label :address2, "Street Address 2" %>
+  <%= form.text_field :address2 %>
+</div>
+
+<div>
+  <%= form.label :city %>
+  <%= form.text_field :city %>
+</div>
+
+<div>
+  <%= form.label :state%>
+  <%= form.state_select :state%>
+</div>
+
+<div>
+  <%= form.label :zipcode, "Zip" %>
+  <%= form.text_field :zipcode %>
+  <%= form.hidden_field :id %>
+</div>
+
+<div>
+  <%= form.label :country %>
+  <%= form.country_select :country, "US" %>
+</div>

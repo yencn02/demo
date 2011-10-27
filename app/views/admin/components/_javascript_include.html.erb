@@ -1,0 +1,6 @@
+<% if params[:controller] == "admin/videos" && ["list", "index"].index(params[:action])%>
+  <%= js_for_list_videos(params[:is_demo]) %>
+<% end %>
+<% if (params[:controller] == "admin/accounts" && ["list", "index"].index(params[:action])) || (params[:controller] == "admin/users" && params[:associations]== "account")%>
+  <%= js_for_list_accounts %>
+<% end %>

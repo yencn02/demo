@@ -1,0 +1,33 @@
+<% if params[:controller] == "admin/video_packs" %>
+  <div id="warning">
+    <h2>Warning</h2>
+    <ul>
+      <li>You can add a video pack with no video pack formats, but you can't see them on the website until it has at least one video pack format</li>
+      <li>You can not add a video pack with no videos in pack.</li>
+      <li>Other required fields: title, description.</li>
+      <% if params[:controller] == "admin/video_packs" && ["edit", "new"].index(params[:action]) %>
+        <li>If you don’t upload image, the system will use a default image this video pack</li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if params[:controller] == "admin/video_pack_formats" %>
+  <div id="warning">
+    <h2>Warning</h2>
+    <ul>
+      <li>Some required fields: video pack, format, price</li>
+      <li>Make sure that all video in pack have already had the same format with the one you will add or update. Otherwise the system will not accept.</li>
+      <li>You can't add two video pack formats which have the same format name</li>
+    </ul>
+  </div>
+<% end %>
+
+<% if params[:controller] == "admin/videos" && ["edit", "new"].index(params[:action]) %>
+  <div id="warning">
+    <h2>Warning</h2>
+    <ul>
+      <li>The recommended rate for uploaded image is: 16x9. We will use this image as a place holder image for paused </li>
+      <li>If you don’t upload image, the system will use a default image this video</li>
+    </ul>
+  </div>
+<% end %>

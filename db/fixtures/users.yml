@@ -1,0 +1,39 @@
+user1:
+  email: test@vafitness.com
+  password: test123
+  password_confirmation: test123
+  is_admin: false
+  account:
+    first_name: Jimmy
+    last_name: Tester
+    address1: 123 ABC street
+    city: Alaska
+    state: AF
+    zipcode: 12345
+    country: US
+user2:
+  email: admin@vafitness.com
+  password: test123
+  password_confirmation: test123
+  is_admin: true
+  account:
+    first_name: Jimmy
+    last_name: Tester
+    address1: 123 ABC street
+    city: Alaska
+    state: AF
+    zipcode: 12345
+    country: US
+user3:
+  email: virtual@vafitness.com
+  password: active
+  password_confirmation: active
+  is_admin: false
+  account:
+    first_name: Jimmy
+    last_name: Tester
+    address1: 123 ABC street
+    city: Alaska
+    state: AF
+    zipcode: 12345
+    country: US

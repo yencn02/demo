@@ -1,0 +1,9 @@
+jimbo:
+  email: jimbo@test.com
+  crypted_password: 1c14db91da9ee5762a40abaa66c952c80a059180f9dd01d957ba81fac6bf3aeed61fb751433572cadc64c3ceaf7ce471946d284005203552f174082a830b81ea
+  password_salt: z29OzdA7BjFQBB8JD_Wc
+  persistence_token: c020498932946fdea5e8086e24d4aa8d20839348c2371ff9ff5d429e74cf2036ffc904dfa08f316eef3fc809212cd7b0ab4402b0dd06a46258b76172503162ea
+  single_access_token: 95dmjcAxQgm1kwpQyji9
+  perishable_token: mEkxUtPbhSZXh77C2aTz
+  login_count: 0
+  failed_login_count: 0

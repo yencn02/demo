@@ -1,0 +1,24 @@
+development:
+  secret_key: rszdV9UsVvB6M
+  url_store: http://vafitness.vo.llnwd.net/o41/s/
+  url_demo : http://vafitness.vo.llnwd.net/o41/u/
+
+staging:
+  secret_key: rszdV9UsVvB6M
+  url_store: http://vafitness.vo.llnwd.net/o41/s/
+  url_demo : http://vafitness.vo.llnwd.net/o41/u/
+
+test:
+  secret_key: rszdV9UsVvB6M
+  url_store: http://vafitness.vo.llnwd.net/o41/s/
+  url_demo : http://vafitness.vo.llnwd.net/o41/u/
+
+cucumber:
+  secret_key: rszdV9UsVvB6M
+  url_store: http://vafitness.vo.llnwd.net/o41/s/
+  demo_url : http://vafitness.vo.llnwd.net/o41/u/
+
+production:
+  secret_key: rszdV9UsVvB6M
+  url_store: http://vafitness.vo.llnwd.net/o41/s/
+  url_demo : http://vafitness.vo.llnwd.net/o41/u/

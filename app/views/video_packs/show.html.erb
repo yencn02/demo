@@ -1,0 +1,87 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "swfobject" %>
+  <%= javascript_include_tag "jwplayer" %>
+<% end %>
+<div id="video-packs-show" class="content partial video-player">
+  <div id="wrapper-video">
+    <div id="video">
+      <div id="video_id">
+        <%= @video_pack.id %>
+      </div>
+    </div>
+  </div>
+  <div id="info">
+    <div id="meta">
+      <div id="title">
+        <h1><%= @video_pack.title %></h1>
+        <div class="clearfix">
+          <p class="label">
+            <strong>Videos:</strong>
+          </p>          
+          <div class="list">
+            <% @video_pack.videos.each_with_index do |video, index| -%>
+              <p><%= link_to video.title, video_path(video) %></p>
+              <div class="tooltip">
+                <div class="clearfix"><p class="title"><%= h video.title %></p></div>
+                <div class="clearfix">
+                  <p class="label">Length:</p>
+                  <p><%= duration_from_seconds video.duration_in_seconds %></p>
+                </div>
+                <div class="clearfix">
+                  <p class="label">Cardio Platform(s):</p>
+                  <p><%= video_categories video %></p>
+                </div>
+                <div class="clearfix">
+                  <p class="label">List of Locations:</p>
+                  <p>
+                    <% video.trails.each do |trail| %>
+                      <%= trail.name %>
+                    <% end %>
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <p><strong>Length: </strong><%= duration_from_seconds @video_pack.duration_in_seconds %> (<%= pluralize(@video_pack.videos.size, "video") %>  @ <%= duration_from_seconds @video_pack.average_duration %>)</p>
+        <div class="clearfix">
+          <p class="label">
+            <strong>Cardio Platform(s):</strong>
+          </p>          
+          <div class="cardio-platform">
+            <% @video_pack.categories.each do |cat| %>
+              <p><%= link_to cat, search_path(:category => cat) %></p>
+            <% end %>
+          </div>          
+        </div>
+        <p><strong>Added: </strong><%= @video_pack.published_at.strftime("%a %B %d, %Y") %></p>
+      </div>
+    </div>
+
+    <div id="description" class="grey-box bubble">
+      <%= @video_pack.description %>
+    </div>
+    <div id="format" class="grey-box bubble last" >
+      <h3>Purchase as:</h3>
+      <% @video_pack.formats.all(:include => :format, :order => 'formats.format_order,formats.name').each do |format| -%>
+        <div class="type clearfix">
+          <div class="format-ico">
+            <a href="<%= add_item_cart_path(:price_id => format.price.id) %>">
+              <% img_src = video_format_image_source(format) %>
+              <img src="/images/<%= img_src %>" alt="<%= format.name %>" class="<%= "ipod" if img_src.index("ipod") %>"/>
+            </a>
+          </div>
+          <div>
+            <p><strong>Format: </strong><%= format.name %></p>
+            <p><strong>Price: </strong><%= format.price.amount.format %></p>
+          </div>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+</div>
+<div id="video-packs-show-sidebar" class="sidebar">
+  <%= render :partial => 'sections/cart', :locals => {:items => @cart_items} %>
+  <%= render :partial => 'sections/video_packs', :local => {:video_packs => @video_packs} %>
+  <%= render :partial => 'sections/similar_videos', :locals => {:videos => @feature_videos} %>
+</div>

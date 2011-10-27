@@ -1,0 +1,18 @@
+<div class="box videos">
+  <h2>Video Packs</h2>
+  <div class="grey-box grey-box-gradient">
+    <% if video_packs.blank? %>
+      No video packs
+    <% else %>
+      <% video_packs.each do |video_pack| %>
+        <div class="item clearfix">
+          <h3><%= video_pack.title %></h3>
+          <%= link_to image_tag(image_source(video_pack.image_thumb_path), {:alt=> video_pack.title}), video_pack %>
+
+          <span><%= video_pack.videos.size %> video packs</span>
+          <span> <%= link_to "See details", video_pack %> </span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

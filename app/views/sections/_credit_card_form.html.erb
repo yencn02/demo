@@ -1,0 +1,52 @@
+<table>
+  <tr>
+    <td width="150" class="right">
+      <%= label :credit_card, :card_type_id, "Type of card"%>
+    </td>
+    <td>
+      <% if @credit_card.card_type %>
+        <%= collection_select(:credit_card, :card_type_id, @card_types, :id, :name, {:selected => [@credit_card.card_type.id, @credit_card.card_type.name]}) %>
+      <% else %>
+        <%= collection_select(:credit_card, :card_type_id, @card_types, :id, :name) %>
+      <% end %>
+      <a href="#" class="card_type" title="Discover"><img src="../images/credit_cards/discover.jpeg" alt="" width="37" height="23"/></a>
+      <a href="#" class="card_type" title="Visa"><img src="../images/credit_cards/visa.jpeg" alt="" width="37" height="23"/></a>
+      <a href="#" class="card_type" title="MasterCard"><img src="../images/credit_cards/mastercard.jpeg" alt="" width="37" height="23"/></a>
+      <a href="#" class="card_type" title="American Express"><img src="../images/credit_cards/american_express.jpeg" alt="" width="37" height="23"/></a>
+    </td>
+  </tr>
+  <tr>
+    <td class="right">
+      <%= label :credit_card, :first_name, "First name" %>
+    </td>
+    <td>
+      <%= text_field :credit_card, :first_name, :size => "20", :value =>  @credit_card.first_name%>
+    </td>
+  </tr>
+  <tr>
+    <td class="right">
+      <%= label :credit_card, :last_name, "Last name" %>
+    </td>
+    <td>
+      <%= text_field :credit_card, :last_name, :size => "20", :value =>  @credit_card.last_name%>
+    </td>
+  </tr>
+  <tr>
+    <td class="right">
+      <%= label :credit_card, :card_number %>
+    </td>
+    <td>
+      <%= text_field :credit_card, :card_number, :size => "20", :value =>  @credit_card.card_number %>
+      (as it appears on credit card)
+    </td>
+  </tr>
+  <tr>
+    <td class="right">
+      Expiration Date
+    </td>
+    <td>
+      <%= select_month @credit_card.expiration_month, :field_name => 'expiration_month' %>
+      <%= select_year @credit_card.expiration_year, :start_year => Time.now.year, :end_year => Time.now.year + 10, :field_name => 'expiration_year' %>
+    </td>
+  </tr>
+</table>

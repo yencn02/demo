@@ -1,0 +1,34 @@
+<%= render :partial => 'sections/filter_menu' %>
+
+<div id="videos-index" class="content partial">
+  <div class="red-box list-browser">
+    <div id="title" class="clearfix">
+      <h1 class="page-title">Browse Videos</h1>
+      <%= will_paginate @videos, :previous_label => "Previous", :next_label => "Next" %>
+    </div>
+    <div id="videos" class="grey-box clearfix grey-box-gradient">
+      <% if @videos.empty? %>
+        <h2>No videos.</h2>
+      <% else %>
+        <% @videos.each do |video| %>
+          <div class="fragment clearfix">
+            <%= link_to image_tag(image_source(video.image_medium_path), {:class => "medium-frame"}), video, :class => "thumb" %>
+            <div class="description">
+              <h2 class="medium-frame-title"><%= link_to video.title, video %></h2>
+              <p><span class="label">Length: </span><%= duration_from_seconds video.duration_in_seconds %></p>
+              <p><span class="label">Cardio Platform(s): </span><%= video_categories video %></p>
+              <p><span class="label">Added: </span><%= video.published_at.strftime("%a %B %d, %Y") %></p>
+              <p><%= link_to excerpt(video.description.to_s, "", :radius => 200), video, :class => "excerpt-description"  %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div id="videos-index-sidebar" class="sidebar">
+  <%= render :partial => 'sections/cart', :locals => {:items => @cart_items} %>
+  <div class="clearfix">&nbsp;</div>
+</div>

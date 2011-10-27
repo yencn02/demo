@@ -1,0 +1,12 @@
+card_type_1:
+  name: Discover
+  code: discover
+card_type_2:
+  name: Visa
+  code: visa
+card_type_3:
+  name: MasterCard
+  code: master
+card_type_4:
+  name: American Express
+  code: american_express

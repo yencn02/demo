@@ -1,0 +1,74 @@
+<% if @cart.billing_address && params[:edit] && params[:edit] == "address" %>
+  <%= hidden_field_tag :edit, "address" %>
+<% end %>
+<div style="padding-left: 93px; <%= "display:none" if @cart.billing_address && params[:edit] && params[:edit] != "card" %>">
+  <div class="instruction">Please enter your credit card information below.</div>
+  <div>
+    <%= label :credit_card, :card_type_id, "Type of card"%>
+    <%= collection_select(:credit_card, :card_type_id, @card_types, :id, :name) %>
+  </div>
+
+  <div>
+    <%= label :credit_card, :first_name, "First name" %>
+    <%= form.text_field :first_name%>
+  </div>
+
+  <div>
+    <%= label :credit_card, :last_name, "Last name" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= label :credit_card, :card_number, "Card number" %>
+    <%= text_field :credit_card, :card_number, :autocomplete => "off" %>
+  </div>
+
+  <div>
+    <label>Expiration Date</label>
+    <%= select_month Time.now.month, :field_name => 'expiration_month' %>
+    <%= select_year Time.now.year, :start_year => Time.now.year, :end_year => Time.now.year + 10, :field_name => 'expiration_year' %>
+  </div>
+</div>
+<div style="padding-left: 93px;<%= "display:none" if @cart.billing_address && params[:edit] && params[:edit] != "address" %>">
+  <div class="instruction">
+    Billing Address
+  </div>
+  <% if !current_user %>
+    <div>
+      <%= label :user, :email, "Email" %>
+      <%= text_field :user, :email, :value => @email%>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :address1, "Street Address 1" %>
+    <%= form.text_field :address1 %>
+  </div>
+
+  <div>
+    <%= form.label :address2, "Street Address 2" %>
+    <%= form.text_field :address2 %>
+  </div>
+
+  <div>
+    <%= form.label :city, "City" %>
+    <%= form.text_field :city %>
+  </div>
+
+
+  <div>
+    <%= form.label :state %>
+    <%= form.state_select :state %>
+  </div>
+
+  <div>
+    <%= form.label :zipcode, "Zip" %>
+    <%= form.text_field :zipcode %>
+  </div>
+
+  <div>
+    <%= form.label :country, "Country" %>
+    <%= form.country_select :country, "US" %>
+  </div>
+
+</div>

@@ -1,0 +1,54 @@
+<% recipient = @recipient.respond_to?(:first_name) ? @recipient : @recipient.account %>
+Hello, <%= recipient.first_name %>!  Thank you for purchasing from Virtual Active! 
+
+<% if @order.has_download_videos? %>
+The downloads you purchased are now available. Right click (control click on a Mac) the link below, and select the 'Download Linked File' option from the popup menu to begin your download:
+<% @order.ordered_line_items.each_with_index do |line_item, index| %>
+  <% if line_item.is_download? %>
+  <%= index + 1 %>. <%= line_item.product.url_download %>
+  <% end %>
+<% end %>
+
+If you haven't already, we strongly suggest that you watch the "How to use Virtual Active" instructional video, which can be viewed here:
+<% end %>
+
+<% if @order.has_no_download_videos? %>
+Your products will arrive within ten business days via <%= SHIPPING_CAREER[@order.shipping_address.shipping_type_id] %>.
+  <% if @order.tracking_number %>
+The tracking number for your shipment is <%= @order.tracking_number %>.
+  <% else %>
+You will receive an email to notify the tracking number shortly.
+  <% end %>
+<% end %>
+
+=========================================
+PURCHASE RECEIPT
+
+Customer Name:  <%= "#{recipient.first_name} #{recipient.last_name}" %>
+Order Date:  <%= @order.created_at.strftime("%a %B %d, %Y") %>
+
+Order Number:  <%= @order.approval_code %>
+<% @order.ordered_line_items.each_with_index do |line_item, index| %>
+  (<%= index + 1 %>) <%= line_item.product.title %>  - <%= line_item.subtotal.format %>
+<% end %>
+
+Credit Card Ending in:  (<%= @credit_card.card_number[@credit_card.card_number.size-4..@credit_card.card_number.size] %>)
+Credit Card Type:  (<%= @credit_card.card_type.name %>)
+Item Subtotal: <%= @order.total_amount.format %>
+
+Grand Total: <%= @order.total_amount.format %>
+
+=========================================
+
+All purchases of media products are final.
+Defective product will be exchanged if returned to the following address within 30 days:
+
+Virtual Active Fulfillment
+350 Sonic Ave.
+Livermore, CA 94551
+
+For questions or concerns regarding your purchase, please email support@vafitness.com.
+
+Enjoy your tour,
+
+Virtual Active

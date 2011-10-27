@@ -1,0 +1,143 @@
+<%= render :partial => 'sections/floating_menu' %>
+
+<div id="users-confirm-order" class="content full">
+  <div class="red-box clearfix">
+    <div class="clearfix">
+      <h1 class="page-title">Checkout / Confirmation</h1>
+    </div>
+    <%= will_paginate @line_items, :previous_label => "Previous", :next_label => "Next" %>
+    <div id="cart" class="grey-box">
+      <% @line_items.each do |line_item| %>
+        <div class="item clearfix">
+          <% cart_product = line_item.cart_product %>
+          <%= link_to image_tag(image_source(cart_product.image_medium_path), {:alt=> cart_product.title, :height => 120, :id=> "img_#{cart_product.id}"}), cart_product %>
+          <div class="info">
+            <h2 class="medium-frame-title"><%= cart_product.title %></h2>
+            <p>Format:
+              <strong>
+                <%= line_item.product.name %>
+              </strong>
+            </p>
+            <p>Price: <strong><%= line_item.price.amount.format %></strong></p>
+            <p>Quantity: <strong><%= line_item.quantity %></strong></p>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="summary">
+        <span>Total items: <strong><%= @cart.total_items %></strong></span>
+        <span class="last">Total cost: <strong><%= @cart.total.format %></strong></span>
+      </div>
+    </div>
+    <div id="payment">
+      <div class="grey-box static-info-box clearfix">
+        <% address = @cart.billing_address %>
+        <h2>Billing Address</h2>
+        <span class="label">First Name:</span>
+        <span class="value"><%= address.first_name %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <span class="label">Last Name:</span>
+        <span class="value"><%= address.last_name %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <span class="label">Street Address 1:</span>
+        <span class="value"><%= address.address1 %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <span class="label">Street Address 2:</span>
+        <span class="value"><%= address.address2 %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <span class="label">City:</span>
+        <span class="value"><%= address.city %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <span class="label">State:</span>
+        <span class="value"><%= Carmen::state_name(address.state) %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <span class="label">Zip Code:</span>
+        <span class="value"><%= address.zipcode %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <span class="label">Country:</span>
+        <span class="value"><%= Carmen::country_name(address.country) %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <form action="" method="" id="billing-address-form">
+          <input id="billing-address" type="submit" class="blue-button" value="Edit" />
+        </form>
+      </div>
+      <% if @cart.has_no_download_videos? %>
+        <div class="grey-box static-info-box clearfix">
+          <% address = @cart.shipping_address  %>
+          <h2>Shipping Address</h2>
+          <span class="label">First Name:</span>
+          <span class="value"><%= address.first_name %></span>
+          <div class="clearfix">&nbsp;</div>
+
+          <span class="label">Last Name:</span>
+          <span class="value"><%= address.last_name %></span>
+          <div class="clearfix">&nbsp;</div>
+
+          <span class="label">Street Address 1:</span>
+          <span class="value"><%= address.address1 %></span>
+          <div class="clearfix">&nbsp;</div>
+
+          <span class="label">Street Address 2:</span>
+          <span class="value"><%= address.address2 %></span>
+          <div class="clearfix">&nbsp;</div>
+
+          <span class="label">City:</span>
+          <span class="value"><%= address.city %></span>
+          <div class="clearfix">&nbsp;</div>
+
+          <span class="label">State:</span>
+          <span class="value"><%= Carmen::state_name(address.state) %></span>
+          <div class="clearfix">&nbsp;</div>
+
+          <span class="label">Zip Code:</span>
+          <span class="value"><%= address.zipcode %></span>
+          <div class="clearfix">&nbsp;</div>
+
+          <span class="label">Country:</span>
+          <span class="value"><%= Carmen::country_name(address.country) %></span>
+          <div class="clearfix">&nbsp;</div>
+
+          <form action="" method="" id="shipping-address-form">
+            <input id="shipping-address" type="submit" class="blue-button" value="Edit" />
+          </form>
+        </div>
+      <% end %>
+      <div id="credit-card" class="grey-box static-info-box last clearfix">
+        <h2>Credit Card</h2>
+        <% card = session[:credit_card] %>
+        <span class="label">Type of Card:</span>
+        <span class="value"><%= card.card_type.name %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <span class="label">Cardholder's Name:</span>
+        <span class="value"><%= card.first_name %> <%= card.last_name %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <span class="label">Card Ending In:</span>
+        <span class="value"><%= card.card_number[card.card_number.size-4..card.card_number.size] %></span>
+        <div class="clearfix">&nbsp;</div>
+
+        <span class="label">Expiration Date:</span>
+        <span class="value"><%= card.expiration_month %>/<%= card.expiration_year %></span>
+
+        <div class="clearfix">&nbsp;</div>
+        <form action="" method="" id="card-info-form">
+          <input id="card-info" type="submit" class="blue-button" value="Edit" />
+        </form>
+      </div>
+      <div id="checkout">
+        <% form_remote_tag :url => checkout_cart_path, :loading => "$('#spinner').show();", :success => "$('#spinner').hide();" do %>
+          <%= submit_tag "Confirm and Checkout", :class => "blue-button" %> <%= image_tag "/images/ajax-loader.gif", :id => "spinner", :style => "display: none; position: absolute; padding-left: 10px;" %>
+        <% end %>
+      </div>
+    </div>
+  </div> 
+</div>

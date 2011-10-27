@@ -1,0 +1,7 @@
+rerun.txt
+Gemfile.lock
+doc/rspec_report.html
+log/*
+nbproject/*
+coverage/*
+public/system/*

@@ -1,0 +1,171 @@
+video_1:
+  title: Pacific Northwest Hike
+  description: This walking tour of coastal Oregon boasts one ocean, seven waterfalls, and sparkling blue Crater Lake.
+  duration_in_seconds: 30
+  category: Hike
+  demo_url: VHHKx0105_demo_01(test).mp4
+  trails: 
+    trail_1: Cascade Head, Oregon
+    trail_2: Crater Lake, Oregon
+    trail_3: Seven Falls, Oregon
+  formats:
+    format_3:
+      name: DVD
+      price: $19.95
+      acutrack_sku: VAHK0101D_DVD_01
+      upc_number: 823857150724
+video_2:
+  title: American Southwest Hike
+  description: Witness the lonely majesty of Utah’s Delicate Arch and the epic expanse of Arizona’s Grand Canyon in this picturesque hike.
+  duration_in_seconds: 30
+  category: Hike
+  demo_url: VHHKx0101_demo_01(test).mp4
+  trails:
+    trail_1: Arches National Park, Utah
+    trail_2: Grand Canyon National Park, Arizona
+    trail_3: Bryce Canyon National Park, Utah
+    trail_4: Goblin Valley, Utah
+  formats:
+    format_3:
+      name: DVD
+      price: $19.95
+      acutrack_sku: VAHK0102D_DVD_01
+      upc_number: 823857150823
+video_3:
+  title: Northern Rockies Hike
+  description: Scale the eerie cliffs of Badlands National Park in South Dakota, cross the wind-swept plains of Beartooth Plateau in Montana, and take a stroll on Mount Rushmore’s observation deck.
+  duration_in_seconds: 30
+  category: Hike
+  demo_url: VHHKx0101_demo_01(test).mp4
+  trails:
+    trail_1: The Badlands, South Dakota
+    trail_2: Black Hills, South Dakota
+    trail_3: Mt. Rushmore, South Dakota
+    trail_4: Grand Tetons, Wyoming
+    trail_5: Yellowstone National Park, Wyoming
+  formats:
+    format_3:
+      name: DVD
+      price: $19.95
+      acutrack_sku: VAHK0103D_DVD_01
+      upc_number: 823857150922
+video_4:
+  title: American Northeast Hike
+  description: This challenging hike takes you to the treacherous top of Mt. Katahdin and the serene summit of Champlain Mountain, on the way to the cascading waters of Arethusa and Niagra Falls.
+  duration_in_seconds: 30
+  category: Hike
+  demo_url: VHHKx0101_demo_01(test).mp4
+  trails:
+    trail_1: Acadia National Park, Maine
+    trail_2: Mt. Katahdin, Maine
+    trail_3: Arethusa Falls, New Hampshire
+    trail_4: Niagra Falls, New York
+  formats:
+    format_3:
+      name: DVD
+      price: $19.95
+      acutrack_sku: VAHK0104D_DVD_01
+      upc_number: 823857151028
+video_5:
+  title: Wild California Hike
+  description: Brave the extreme heat of Death Valley, cool down on the chilly shores of Lake Tahoe, and wander through a snow-covered desert in Joshua Tree National Park.
+  duration_in_seconds: 30
+  category: Hike
+  demo_url: VHHKx0101_demo_01(test).mp4
+  trails:
+    trail_1: Emerald Bay, Lake Tahoe
+    trail_2: Joshua Tree National Park
+    trail_3: Death Valley National Park
+  formats:
+    format_3:
+      name: DVD
+      price: $19.95
+      acutrack_sku: VAHK0105D_DVD_01
+      upc_number: 823857151127
+video_6:
+  title: Wild California Run
+  description: The amazing diversity of California is on full display in this run past the iconic domes and waterfalls of Yosemite National Park and down the beach into one of Southern California’s famous sunsets.
+  duration_in_seconds: 30
+  category: Run
+  demo_url: VHHKx0101_demo_01(test).mp4
+  trails:
+    trail_1: Crystal Cove Beach, Los Angeles
+    trail_2: Mount Baldy, Los Angeles
+    trail_3: Nevada Falls, Yosemite National Park
+    trail_4: Sentinel Dome, Yosemite National Park
+    trail_5: Morro Rock, Sequoia National Park
+  formats:
+    format_3:
+      name: DVD
+      price: $19.95
+      acutrack_sku: VARN0101D_DVD_01
+      upc_number: 823857151226
+video_7:
+  title: Pacific Northwest Run
+  description: Jog down the Seattle waterfront, dodge farmers and fish mongers at Pike’s Place Market, and sprint the to finish in the shadow of volcanic Mount St. Helens.
+  duration_in_seconds: 30
+  category: Run
+  demo_url: VHHKx0101_demo_01(test).mp4
+  trails:
+    trail_1: Waterfront Park, Seattle
+    trail_2: Pike’s Place Market, Seattle
+    trail_3: Olympic State Park, Washington
+    trail_4: Mt. St. Helens, Washington
+  formats:
+    format_3:
+      name: DVD
+      price: $19.95
+      acutrack_sku: VARN0102D_DVD_01
+      upc_number: 823857151325
+video_8:
+  title: American Southwest Run
+  description: Elegant natural arches, surreal hoodoos, and the Grand Canyon highlight this running tour of Arizona and Utah.
+  duration_in_seconds: 30
+  category: Run
+  demo_url: VHHKx0101_demo_01(test).mp4
+  trails:
+    trail_1: Arches National Park, Utah
+    trail_2: Grand Canyon National Park, Arizona
+    trail_3: Grand Wash, Utah
+    trail_4: Bryce Canyon National Park, Utah
+  formats:
+    format_3:
+      name: DVD
+      price: $19.95
+      acutrack_sku: VARN0103D_DVD_01
+      upc_number: 823857151424
+video_9:
+  title: Northern Rockies Run
+  description: This run travels through some of America’s most famous parks.  Climb to a deserted fort atop the Black Hills of South Dakota and see “where the buffalo roam” in Yellowstone National Park.
+  duration_in_seconds: 30
+  category: Run
+  demo_url: VHHKx0105_demo_01(test).mp4
+  trails:
+    trail_1: The Badlands, South Dakota
+    trail_2: Black Hills, South Dakota
+    trail_3: Grand Tetons, Wyoming
+    trail_4: Yellowstone National Park, Wyoming
+  formats:
+    format_3:
+      name: DVD
+      price: $19.95
+      acutrack_sku: VARN0104D_DVD_01
+      upc_number: 823857151523
+video_10:
+  title: American Northeast Run
+  description: Enjoy the colorful leaves of a New England fall and the thunderous roar of Niagra Falls in this Atlantic Coast run.
+  duration_in_seconds: 30
+  category: Run
+  demo_url: VHRNx0103_demo_01(test).mp4
+  trails:
+    trail_1: Acadia National Park, Maine
+    trail_2: Rural New Hampshire
+    trail_3: Niagra Falls, Ontario, Canad
+    trail_4: Portland, Maine
+    trail_5: Rural Vermont
+  formats:
+    format_3:
+      name: DVD
+      price: $19.95
+      acutrack_sku: VARN0105D_DVD_01
+      upc_number: 823857151622

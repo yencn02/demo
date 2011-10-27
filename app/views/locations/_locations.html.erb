@@ -1,0 +1,33 @@
+<% if @locations && @locations.size > 0 %>
+  <% @locations.each do |location| %>
+    <div class="entry">
+      <h3><%= location.location_name %></h3>
+      <p><%= location.address1 %></p>
+      <p><%= location.address2 %></p>
+      <p><%= location.city %>, <%= location.state %> <%= location.zipcode %>, <%= location.country %></p>
+      <p><%= location.phone %></p>
+      <p>
+        <% if params[:search] && !params[:search].empty? && !@lat_lng.nil? && !location.lat.nil? && !location.lng.nil? %>
+          <% distance = location.distance_to(@lat_lng).to_f %>
+          Within <%= number_with_delimiter(sprintf('%.2f', distance).to_f, :delimiter => ",") %> miles of location "<%= params[:search] %>"
+        <% end %>
+      </p>
+      <p>
+        <% if location.website %>
+          <a href="<%= location.website %>" target="_blank" class="website last" >website</a>
+        <% end %>
+        <%# if params[:search] && !params[:search].empty? && !@lat_lng.nil? && !location.lat.nil? && !location.lng.nil? %>
+          <%#= link_to_remote "directions", :html => {:class => "last"}, :method => :get, :url => line_direction_locations_path(:id => location.id, :center => @lat_lng, :address => params[:search], :distance => distance) %>
+        <%# elsif (location.lat && location.lng) %>
+          <%#= link_to_remote "directions", :html => {:class => "last"}, :method => :get, :url => point_direction_locations_path(:id => location.id)%>
+        <%# end %>
+      </p>
+    </div>
+  <% end %>
+<% else %>
+  <% unless params[:search] %>
+    Please enter a zip code to find a Virtual Active location.
+  <% else %>
+    No locations available.
+  <% end %>
+<% end %>

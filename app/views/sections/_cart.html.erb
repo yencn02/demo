@@ -1,0 +1,30 @@
+<div id="sections-cart" class="box">
+  <h2>My Cart</h2>
+  <div class="grey-box grey-box-gradient">
+    <% if items.empty? %>
+      Your shopping cart is empty.
+    <% else %>
+      <% items.each do |item|%>
+        <% if item and product = item.cart_product %>
+          <div class="item clearfix">
+            <h3><%= excerpt(product.title, "", 20) %></h3>
+            <%= link_to image_tag(image_source(product.image_thumb_path), {:alt=> product.title}), product %>
+            <div><strong>Format: </strong><%= item.product.name %></div>
+            <div><strong>Price: </strong><%= item.price.amount.format %></div>
+          </div>
+        <% end %>
+      <% end %>
+      <div id="view-cart" >
+        <a href="<%= cart_account_path %>">
+          <span class="button">View Cart</span>
+        </a>
+      </div>
+    <% end %>
+  </div>
+  <% if current_user %>
+  <div id="links">
+    <a href="<%= information_account_path %>"><%= current_user.account.first_name %></a>
+    <a class="last" href="<%= logout_path %>">Log Out</a>
+  </div>
+  <% end %>
+</div>

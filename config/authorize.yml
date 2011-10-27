@@ -1,0 +1,19 @@
+development:
+  login_id: 5KvHMcL5u5bP
+  transaction_key: 3L56V7wVw5b9bd58
+
+staging:
+  login_id: 5KvHMcL5u5bP
+  transaction_key: 3L56V7wVw5b9bd58
+
+test:
+  login_id: 5KvHMcL5u5bP
+  transaction_key: 3L56V7wVw5b9bd58
+
+cucumber:
+  login_id: 5KvHMcL5u5bP
+  transaction_key: 3L56V7wVw5b9bd58
+
+production:
+  login_id: 3x4bNG3kE
+  transaction_key: 445H4u4q6ryEB437

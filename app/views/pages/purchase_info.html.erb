@@ -1,0 +1,45 @@
+<div class="clearfix">&nbsp;</div>
+<div id="purchase-info" class="content partial site-info">
+  <div class="red-box">
+    <h1 class="page-title">Purchase Info</h1>
+    <p class="introduction">
+      DVDs will arrive within ten business days via USPS First Class with tracking.
+    </p>
+
+    <p class="introduction">
+      You will receive an email to notify you of the tracking number shortly after making a purchase.
+    </p>
+
+    <p class="introduction last">
+      All purchases of media products are final.
+    </p>
+    <p class="introduction">
+      Defective product will be exchanged if returned to the following address within 30 days:
+    </p>
+
+    <p class="introduction last address">
+      Virtual Active Fulfillment
+    </p>
+    <p class="introduction last address">
+      350 Sonic Ave.
+    </p>
+    <p class="introduction last address">
+      Livemore, CA 94551
+    </p>
+    <p class="introduction address">
+      415.369.0975
+    </p>
+
+    <p class="introduction">
+      For questions or concerns regarding your purchase, please email <a href="mailto:support@vafitness.com">support@vafitness.com</a>.
+    </p>
+
+    <div class="clearfix">&nbsp;</div>
+  </div>
+</div>
+
+<div id="pages-facility-sidebar" class="sidebar">
+  <% if current_user_session.blank? %>
+    <%= render :partial => 'sections/login' %>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShippingConfirmation xmlns="urn:acutrack:shippingConfirmation">
+  <Orders>
+    <Order>
+      <ApprovalCode>1285666319</ApprovalCode>
+      <TrackingNumber>XXXXXXXX</TrackingNumber>
+      <DealerID>DI102J</DealerID>
+    </Order>
+  </Orders>
+</ShippingConfirmation>

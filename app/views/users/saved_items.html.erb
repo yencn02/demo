@@ -1,0 +1,48 @@
+<%#*<div id="users-cart" class="content partial">%>
+  <%#= render :partial => 'sections/floating_menu' %>
+  <%# @saved_items = @cart.saved_items.paginate(:page => params[:page], :per_page => 12) %>
+  <%#*<div id="wrapper" class="red-box">%>
+    <%#*<div id="title" class="clearfix">%>
+      <%#*<h1>My Account / Saved Items</h1>%>
+      <%#= will_paginate @saved_items %>
+    <%#*</div>%>
+    <%#*<div id="videos" class="grey-box clearfix">%>
+      <%# if @cart.empty? -%>
+        <%#*<h2>Your shopping cart is empty.</h2>%>
+      <%# else -%>
+        <%#*<!--form-->%>
+        <%# form_for :cart, :url => update_items_cart_path do |f| %>
+          <%# @saved_items.in_groups_of(3).each do |line_items| -%>
+            <%#*<div class="fragment clearfix">%>
+              <%# line_items.each_with_index do |line_item, index| -%>
+                <%# if line_item and product = cart_product_from(line_item) -%>
+                  <%#*<div class="item <%= "last" if index == 2 %>" id="item_<%= line_item[:price_id] %>">%>
+                    <%#= link_to image_tag( 'sample-image.jpg'), product %>
+                    <%#*<h2><%= product.title %></h2>%>
+                    <%# if line_item.product.class == VideoFormat %>
+                      <%#*<p><strong>Format: </strong><%= line_item.product.name %></p>%>
+                    <%# end %>
+                    <%#*<p><strong>Price: </strong><%= line_item.price.amount.format %></p>%>
+                    <%#*<div class="temp">%>
+                      <%#*<input class="numeric" type="text" name="cart[<%= line_item[:price_id] %>]" value="<%= line_item[:quantity] %>" style="width: 50px;"/>%>
+                      <%#*<br/>%>
+                      <%#= link_to "Delete", remove_item_cart_path(:price_id => line_item[:price_id]) %> |
+                      <%#= link_to "Move to cart", move_to_cart_cart_path(:price_id => line_item[:price_id])%>
+                    <%#*</div>%>
+                  <%#*</div>%>
+                <%# end -%>
+              <%# end %>
+            <%#*</div>%>
+          <%# end -%>
+          <%#*<div style="float: right" class="temp">%>
+            <%#= link_to "View cart items", cart_account_path%>
+          <%#*</div>%>
+        <%# end %>
+        <%#*<!--/form-->%>
+      <%# end -%>
+    <%#*</div>%>
+  <%#*</div>%>
+<%#*</div>%>
+<%#*<div id="users-cart-sidebar" class="sidebar">%>
+  <%#= render :partial => 'sections/cart_summary', :locals => {:cart => @cart} %>
+<%#*</div>%>

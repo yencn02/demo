@@ -1,0 +1,17 @@
+central_park:
+  title: Central Park Stroll
+  slug: central-park-stroll
+  description: This is a video of a run through Central Park in New York City, NY.
+  duration_in_seconds: 1800
+  published_at: 2010-04-12
+  view_count: 100
+  purchase_count: 5
+
+brooklyn_bridge:
+  title: Brooklyn Bridge
+  slug: brooklyn-bridge
+  description: This is a video of a bike ride over the Brooklyn Bridge.
+  duration_in_seconds: 3600
+  published_at: 2010-04-13
+  view_count: 25
+  purchase_count: 15

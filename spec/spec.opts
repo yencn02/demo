@@ -1,0 +1,9 @@
+--colour
+--format progress
+--loadby mtime
+--reverse
+--format
+html:doc/rspec_report.html
+--loadby
+mtime
+--drb

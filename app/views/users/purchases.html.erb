@@ -1,0 +1,85 @@
+<%= render :partial => 'sections/floating_menu' %>
+<div id="users-purchases" class="content full">
+  <div class="red-box clearfix">
+    <div class="clearfix">
+      <h1 class="page-title">Purchase History</h1>
+    </div>
+    <% if @orders && @orders.size > 0 %>
+      <%= will_paginate @orders, :previous_label => "Previous", :next_label => "Next" %>
+      <% @orders.each do |order| %>
+        <div id="order" class="grey-box">
+          <div class="order-sumary">
+            <span style="padding-right: 20px;">Order date: <strong><%= order.created_at.strftime("%a %B %d, %Y") %></strong></span>
+            <span style="padding-right: 20px;">Order number: <strong><%= order.approval_code %></strong></span>
+            <% if order.tracking_number %>
+              <span style="padding-right: 20px;">Tracking number: <strong><%= order.tracking_number %></strong></span>
+            <% end %>
+          </div>
+          <% order.ordered_line_items.each do |line_item| %>
+            <div class="item clearfix">
+              <% order_product = line_item.order_product %>
+              <% if order_product %>
+                <%= link_to image_tag(image_source(order_product.image_medium_path), {:alt=> order_product.title, :height => 120, :id=> "img_#{order_product.id}"}), order_product %>
+                <div class="info">
+                  <h2 class="medium-frame-title"><%= order_product.title %></h2>
+                  <p>Format:
+                    <strong>
+                      <%= line_item.product.name %>
+                    </strong>
+                  </p>
+                  <p>Price: <strong><%= line_item.unit_price.format %></strong></p>
+                  <p>Quantity: <strong><%= line_item.quantity %></strong></p>
+                </div>
+              <% else %>
+                <%= image_tag(image_source(""), {:alt=> line_item.product_title, :height => 120}) %>
+                <div class="info">
+                  <% arr = line_item.product_title.split(" - ") %>
+                  <h2 class="medium-frame-title"><%= arr[0] %></h2>
+                  <p>Format:
+                    <strong>
+                      <% arr.delete_at(0) %>
+                      <%= arr.join(" - ") %>
+                    </strong>
+                  </p>
+                  <p>Price: <strong><%= line_item.unit_price.format %></strong></p>
+                  <p>Quantity: <strong><%= line_item.quantity %></strong></p>
+                  <p>Product has been deleted.</p>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="summary">
+            <span>Total items: <strong><%= order.total_items %></strong></span>
+            <span class="last">Total cost: <strong><%= order.total_amount.format %></strong></span>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <div id="order" class="grey-box">
+        No orders.
+      </div>
+    <% end %>
+  </div>
+</div>
+<div id="videos-show-sidebar" class="sidebar">
+  <%= render :partial => 'sections/cart', :locals => {:items => @cart_items} %>
+</div>
+<% if flash[:total_value] %>
+  <!-- Google Code for Purchase Conversion Page -->
+  <script language="JavaScript" type="text/javascript">
+    <!--
+    var google_conversion_id = 1234567890;
+    var google_conversion_language = "en_US";
+    var google_conversion_format = "1";
+    var google_conversion_color = "666666";
+    var google_conversion_label = "Purchase";
+    if (<%= flash[:total_value] %>) {
+      var google_conversion_value = <%= flash[:total_value] %>;
+    }
+  </script>
+  <script language="JavaScript" src="http://www.googleadservices.com/pagead/conversion.js">
+  </script>
+  <noscript>
+    <img height=1 width=1 border=0 src="http://www.googleadservices.com/pagead/conversion/1234567890/?value=<%= flash[:total_value] %>&label=Purchase&script=0"/>
+  </noscript>
+<% end %>

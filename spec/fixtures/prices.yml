@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+central_park_download:
+  amount_in_cents: 3000
+  currency: USD
+  product: central_park (VideoFormat)
+
+central_park_dvd:
+  amount_in_cents: 1499
+  currency: USD
+  product: central_park (VideoFormat)
+
+new_york_city_pack:
+  amount_in_cents: 5000
+  currency: USD
+  product: new_york_city (VideoPack)

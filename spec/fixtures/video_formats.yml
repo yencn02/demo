@@ -1,0 +1,9 @@
+central_park_download:
+  format: format_1
+  details: 720p Hi-Def Video
+  is_downloadable: true
+  download_file_name: central_park_720p.mpg
+  download_content_type: video/mpeg
+  download_file_size: 143143
+  download_updated_at: 2010-04-12 12:54:52
+  video: central_park

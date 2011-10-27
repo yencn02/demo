@@ -1,0 +1,28 @@
+<div class="floating-menu">
+  <ul>
+    <li style="font-weight: bold;color: #ffffff;">Sort</li>
+    <li class="<%=  'current_navigation' if @filter == 'recent' %>">
+      <%= link_to "#{ '>' if @filter == 'recent'} Most Recent", {:action => :index, :filter => "recent", :category => @category} %>
+    </li>
+    <li class="<%=  'current_navigation' if @filter == 'popular' %>">
+      <%= link_to "#{ '>' if @filter == 'popular'} Most Popular", {:action => :index, :filter => "popular", :category => @category} %>
+    </li>
+    <li class="<%=  'current_navigation' if @filter == 'viewed' %>">
+      <%= link_to "#{ '>' if @filter == 'viewed'} Most Views", {:action => :index, :filter => "viewed", :category => @category} %>
+    </li>
+    <li class="<%=  'current_navigation' if @filter == 'featured' %>">
+      <%= link_to "#{ '>' if @filter == 'featured'} Most Featured", {:action => :index, :filter => "featured", :category => @category} %>
+    </li>
+    <li style="font-weight: bold;color: #ffffff;border-bottom: 2px solid #7f7f7f;">Cardio Plaform</li>
+    <li class="<%=  'current_navigation' if @category == 'all' %>">
+      <%= link_to "#{ '>' if @category == 'all'} All", {:action => :index, :category => "all", :filter => @filter} %>
+    </li>
+    <li class="<%=  'current_navigation' if @category == 'run' %>">
+      <%= link_to "#{ '>' if @category == 'run'} Run", {:action => :index, :category => "run", :filter => @filter} %>
+    </li>
+    <li class="<%=  'current_navigation' if @category == 'hike' %>">
+      <%= link_to "#{ '>' if @category == 'hike'} Hike", {:action => :index, :category => "hike", :filter => @filter} %>
+    </li>
+  </ul>
+</div>
+<div class="clearfix">&nbsp;</div>

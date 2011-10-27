@@ -1,0 +1,29 @@
+<% recipient = @recipient.respond_to?(:first_name) ? @recipient : @recipient.account %>
+Hello, <%= recipient.first_name %>!  Thank you for purchasing from Virtual Active! 
+
+<% if @order.has_no_download_videos? %>
+Your products will arrive within ten business days via (<%= SHIPPING_CAREER[@order.shipping_address.shipping_type_id] %>).
+The tracking number for your shipment is (<%= @order.tracking_number %>).
+<% end %>
+
+=========================================
+PURCHASE RECEIPT
+
+Customer Name:  <%= "#{recipient.first_name} #{recipient.last_name}" %>
+Order Date:  <%= @order.created_at.strftime("%a %B %d, %Y") %>
+
+Order Number:  <%= @order.approval_code %>
+=========================================
+
+All purchases of media products are final.
+Defective product will be exchanged if returned to the following address within 30 days:
+
+Virtual Active Fulfillment
+350 Sonic Ave.
+Livermore, CA 94551
+
+For questions or concerns regarding your purchase, please email support@vafitness.com.
+
+Enjoy your tour,
+
+Virtual Active

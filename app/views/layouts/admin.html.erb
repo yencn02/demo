@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>VIRTUALACTIVE | ADMIN</title>
+
+    <%= stylesheet_link_tag 'admin' %>
+    <%= stylesheet_link_tag('home') %>
+<%#= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "prototype", "effects", "jquery" %>
+    <%= javascript_auto_include_tags %>
+    <%= yield(:javascripts) %>
+    <%= active_scaffold_includes %>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div id="header" class="clearfix">
+        <div id="logo" class="clearfix">
+          <%= link_to 'VIRTUAL<strong>ACTIVE</strong> | ADMIN', admin_root_path %>
+        </div>
+
+        <div id="main-nav" class="clearfix">
+          <ul>
+            <li><%= current_nav_item(/\A#{admin_root_path}\Z/) { link_to 'DASHBOARD', admin_root_path } %></li>
+            <li><%= current_nav_item(/\A#{admin_users_path}.*/) { link_to 'USERS', admin_users_path } %></li>
+            <li><%= current_nav_item(/\A#{admin_formats_path}.*/) { link_to 'FORMATS', admin_formats_path } %></li>
+            <li><%= current_nav_item(/\A#{admin_videos_path}.*/) { link_to 'VIDEOS', admin_videos_path(:is_demo => 0) } %></li>
+            <li><%= current_nav_item(/\A#{admin_video_formats_path}.*/) { link_to 'VDO-FORMATS', admin_video_formats_path } %></li>
+            <li><%= current_nav_item(/\A#{admin_video_packs_path}.*/) { link_to 'VIDEO PACKS', admin_video_packs_path } %></li>
+            <li><%= current_nav_item(/\A#{admin_video_pack_formats_path}.*/) { link_to 'VDO-PK-FORMATS', admin_video_pack_formats_path } %></li>
+            <li><%= current_nav_item(/\A#{admin_images_path}.*/) { link_to 'IMAGE', admin_images_path } %></li>
+            <li><%= current_nav_item(/\A#{admin_gym_locations_path}.*/) { link_to 'GYM LCATIONS', admin_gym_locations_path } %></li>
+            <li><%= current_nav_item(/\A#{admin_promos_path}.*/) { link_to 'PROMOS', admin_promos_path } %></li>
+            <li><%= current_nav_item(/\A#{admin_orders_path}.*/) { link_to 'ORDERS', admin_orders_path } %></li>
+          </ul>
+        </div>
+
+        <div id="search">
+          <%= link_to '&raquo; Back to Website', root_path %>
+        </div>
+      </div>
+      <%= render :partial => "admin/components/warning" %>
+      <div id="content" class="clearfix">
+        <%= yield %>
+      </div>
+
+      <div id="footer" class="clearfix">
+        <div class="list">
+          <div class="header">MEDIA</div>
+
+          <ul>
+            <li><%= link_to 'New Videos', videos_path(:filter => 'most_recent') %></li>
+            <li><%= link_to 'Top Selling', videos_path(:filter => 'top_selling') %></li>
+            <li><%= link_to 'Most Viewed', videos_path(:filter => 'most_viewed') %></li>
+          </ul>
+        </div>
+
+        <div class="list">
+          <div class="header">SPORTS</div>
+
+          <% Category.all.in_groups_of(3).each do |categories| -%>
+            <ul>
+              <% categories.compact.each do |category| -%>
+                <li><%= link_to category.name, search_path(:category => category.name) %></li>
+              <% end -%>
+            </ul>
+          <% end -%>
+        </div>
+
+        <div class="list">
+          <div class="header">ABOUT</div>
+
+          <ul>
+            <li><%= link_to 'Technology', '#' %></li>
+            <li><%= link_to 'Benefits', '#' %></li>
+            <li><%= link_to 'Request Information', '#' %></li>
+          </ul>
+
+          <ul>
+            <li><%= link_to 'Passport System', '#' %></li>
+            <li><%= link_to 'Virtual Active by Matrix', '#' %></li>
+            <li><%= link_to 'Contact Us', '#' %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%= load_states(Carmen::STATES) %>
+  <script>
+    jQuery.noConflict();
+  </script>
+  <%= render :partial => "admin/components/javascript_include" %>
+</html>

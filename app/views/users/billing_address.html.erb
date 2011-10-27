@@ -1,0 +1,22 @@
+<%= render :partial => 'sections/floating_menu' %>
+
+<div id="users-billing-address" class="content partial">
+  <div id="wrapper" class="red-box clearfix">
+    <div class="clearfix">
+      <h1 class="page-title">Checkout / Credit Card Information</h1>
+    </div>
+    <% form_remote_for @address_book, :url => set_billing_info_cart_path, :html => {:class => "typical"} do |form| %>
+      <div id="message-wraper" style="display:none"></div>
+      <%= render :partial => 'billing_address_form', :locals => {:form => form}  %>
+      <div>
+        <label>&nbsp;</label>
+        <input type="submit" value="Continue" class="blue-button" />
+      </div>
+    <% end %> 
+  </div>
+</div>
+
+<div id="users-billing-address-sidebar" class="sidebar">
+  <%= render :partial => 'sections/cart_summary', :locals => {:cart => @cart} %>
+</div>
+<%= load_states(Carmen::STATES) %>

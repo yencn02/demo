@@ -1,0 +1,34 @@
+<span class="label">First Name:</span>
+<span class="value"><%= address.first_name %></span>
+<div class="clearfix">&nbsp;</div>
+
+<span class="label">Last Name:</span>
+<span class="value"><%= address.last_name %></span>
+<div class="clearfix">&nbsp;</div>
+
+<span class="label">Street Address 1:</span>
+<span class="value"><%= address.address1 %></span>
+<div class="clearfix">&nbsp;</div>
+
+<span class="label">Street Address 2:</span>
+<span class="value"><%= address.address2 %></span>
+<div class="clearfix">&nbsp;</div>
+
+<span class="label">City:</span>
+<span class="value"><%= address.city %></span>
+<div class="clearfix">&nbsp;</div>
+
+<span class="label">State:</span>
+<span class="value"><%= Carmen::state_name(address.state) %></span>
+<div class="clearfix">&nbsp;</div>
+
+<span class="label">Country:</span>
+<span class="value"><%= Carmen::country_name(address.country) %></span>
+
+<div class="buttons clearfix">
+  <form action="" method="">
+    <input type="submit" class="blue-button ship" value="Ship to this Address" id="ship<%= address.id %>"/>
+    <input type="submit" class="blue-button edit" value="Edit" id="edit<%= address.id %>"/>
+    <input type="submit" class="blue-button delete" value="Delete" id="delete<%= address.id %>"/>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+<div id="users-new" class="content partial">
+  <div class="red-box clearfix">
+    <h1 class="page-title">New User Registration</h1>    
+    <div class="clearfix">&nbsp;</div>
+
+    <% form_for @user, :url => account_path, :html => { :class => 'typical' } do |f| %>
+      <%= f.error_messages %>
+
+      <%= render :partial => "form", :object => f %>
+
+      <p><%= f.submit "Signup", :class => 'blue-button' %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="sidebar">
+  <%= render :partial => 'sections/login' %>
+</div>
+<%= load_states(Carmen::STATES) %>

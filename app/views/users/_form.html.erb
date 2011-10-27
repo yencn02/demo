@@ -1,0 +1,55 @@
+<div>
+  <%= form.label :email, "Email Address" %>
+  <%= form.text_field :email %>
+</div>
+<% form.fields_for :account do |account_form| -%>
+  <div>
+    <%= account_form.label :first_name %>
+    <%= account_form.text_field :first_name, :class => "format" %>
+  </div>
+  <div>
+    <%= account_form.label :last_name %>
+    <%= account_form.text_field :last_name, :class => "format" %>
+  </div>
+  <div>
+    <%= account_form.label :address1, "Address (1)"%>
+    <%= account_form.text_field :address1 %>
+  </div>
+  <div>
+    <%= account_form.label :address2, "Address (2)"%>
+    <%= account_form.text_field :address2 %>
+  </div>
+  <div>
+    <%= account_form.label :city %>
+    <%= account_form.text_field :city %>
+  </div>
+  <div>
+    <%= account_form.label :state %>
+    <%= account_form.state_select :state %>
+  </div>
+  <div>
+    <%= account_form.label :zipcode, "Zip" %>
+    <%= account_form.text_field :zipcode %>
+  </div>
+  <div>
+    <%= account_form.label :country, "Country" %>
+    <%= account_form.country_select :country, "US" %>
+  </div>
+<% end %>
+<div>
+  <%= form.label :password, form.object.new_record? ? "Password" : "Change password" %>
+  <%= form.password_field :password, :autocomplete => :off %>
+</div>
+<div>
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation, :autocomplete => :off %>
+</div>
+<% form.fields_for :account do |account_form| -%>
+  <div>
+    <%= form.label :receive_email %>
+    <div class="receive-email-text">
+      <%= account_form.check_box :receive_email %>
+      (Yes, I would like to receive email notifications about new Virtual Active video releases and special offers!)
+    </div>
+  </div>
+<% end %>

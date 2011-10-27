@@ -1,0 +1,25 @@
+<div class="clearfix">&nbsp;</div>
+<div id="pages-about" class="content partial site-info">
+  <div class="red-box">
+    <h1 class="page-title">About Virtual Active</h1>
+    <p class="introduction">
+      Virtual Active is a San Francisco-based media and technology company dedicated to creating a better cardio workout experience.  We believe that regular television distracts a viewer, but detracts from the workout.  Three years ago, loaded down with test equipment on a coastal redwood trail in California, we began our journey to do better.
+    </p>
+
+    <p class="introduction">
+      Along the way, we've been joined by camera fanatics, film geeks, fitness buffs and the most forward-looking, innovative companies in the fitness industry.  Together we reached our initial goal: creating a cardio experience that entertains, motivates, and enhances performance with professional training tools and stunning visuals.
+    </p>
+
+    <p class="introduction last">
+      We believe it's the best cardio entertainment in the world, but we also believe there is more to achieve.  We're moving faster than ever to continue improving the experience, and you're invited to join us.  Whether you're a user, facility manager, or fitness business looking to create a better cardio workout, your journey begins here.
+    </p>
+
+    <div class="clearfix">&nbsp;</div>
+  </div>
+</div>
+
+<div id="pages-facility-sidebar" class="sidebar">
+ <% if current_user_session.blank? %>
+   <%= render :partial => 'sections/login' %>
+ <% end %>
+</div>

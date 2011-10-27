@@ -1,0 +1,46 @@
+<div id="description" class="grey-box">
+  <div>
+    <%= video.description %>
+  </div>
+  <% video.formats.all(:include => :format).each do |format| -%>
+    <% if format.name.eql?("DVD") %>
+      <div style="font-weight: bold;padding-top: 5px;">
+        The DVD version of this product contains the following:
+      </div>
+      <div style="padding-left:5px;">
+        &#8226; A 35 minute instructed scenic workout coached by Johnny Pearman.
+      </div>
+      <div style="padding-left:5px;">
+        &#8226; A 35 minute non-instructed scenic workout (scenery is identical.)
+      </div>
+      <div style="padding-left:5px;">
+        &#8226; A "How to use Virtual Active" instructional segment.
+      </div>
+    <% end %>
+
+    <% if format.name.eql?("iPod Basic") %>
+      <div style="font-weight: bold;padding-top: 5px;">
+        The "iPod Basic" version of this product contains the following:
+      </div>
+      <div style="padding-left:5px;">
+        &#8226; A 35 minute non-instructed scenic workout.
+      </div>
+    <% end %>
+
+    <% if format.name.eql?("iPod Instructed") %>
+      <div style="font-weight: bold;padding-top: 5px;">
+        The "iPod Instructed" version of this product contains the following:
+      </div>
+      <div style="padding-left:5px;">
+        &#8226; A 35 minute instructed scenic workout coached by Johnny Pearman.
+      </div>
+    <% end %>
+  <% end %>
+  <div style="font-weight: bold;padding-top: 10px;">
+    Please note that customers who are purchasing downloadable iPod products should view the "How to use Virtual Active" instructional segment <a href="/pages/howto">here</a>.
+  </div>
+
+  <div style="font-weight: bold;padding-top: 10px;">
+    THESE PRODUCTS ARE LICENSED FOR USE IN A HOME SETTING ONLY.  ANY USE BY A COMMERCIAL FITNESS FACILITY WITHOUT WRITTEN CONSENT IS A VIOLATION OF FEDERAL COPYRIGHT LAW.  VIRTUAL ACTIVE MONITORS THE COMMUNITY AND WILL AGRESSIVELY PURSUE FACILITIES THAT USE HOME PRODUCTS WITHOUT AUTHORIZATION.
+  </div>
+</div>

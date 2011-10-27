@@ -1,0 +1,31 @@
+<div id="sections-cart-summary" class="box">
+  <h2>Cart Summary</h2>
+  <div class="grey-box grey-box-gradient">
+    <% if cart.nil? || cart.empty? -%>
+      <strong>Your shopping cart is empty.</strong>
+    <% else %>
+      <% cart.line_items.each do |line_item| -%>
+        <div class="item clearfix">
+          <h3><%= excerpt(line_item.cart_product.title, "", 26) %></h3>
+          <span><%= line_item.unit_price.format %> x <%= line_item.quantity %></span>
+        </div>
+      <% end %>
+      <hr />
+      <div class="item clearfix">
+        <span><%= cart.total.format %></span>
+      </div>
+      <div id="check-out" class="clearfix">
+        <% unless ["billing_address", "shipping_address", "confirm_order"].index(action_name) %>
+          <%# url = (@cart.has_download_videos? ? "#login-box" : "#login-no-download") %>
+          <% unless @current_user %>
+            <a title="Proceed to Checkout" rel="facebox" href="#login-no-download"><input type="button" class="blue-button" value="Proceed to Checkout" name="proceed to checkout"/></a>            
+          <% else %>
+            <%= link_to "Proceed to Checkout", billing_address_account_path %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render :partial => "sections/login_no_download" %>
+<%= render :partial => "sections/login" %>

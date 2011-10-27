@@ -1,0 +1,20 @@
+<div id="password-reset" class="content partial">
+  <div class="red-box list-browser">
+    <div id="title" class="clearfix">
+      <h1 class="page-title">Reset Password</h1>
+    </div>
+
+    <div class="introdution">Please enter your email address below and then press "Reset Password".</div>
+
+    <% form_tag password_resets_path do %>
+      <%= text_field_tag :email %>
+      <%= submit_tag "Reset Password", :class => "blue-button" %>
+    <% end %>
+  </div>
+</div>
+
+
+<div id="videos-index-sidebar" class="sidebar">
+  <%= render :partial => 'sections/cart', :locals => {:items => @cart_items} %>
+  <div class="clearfix">&nbsp;</div>
+</div>

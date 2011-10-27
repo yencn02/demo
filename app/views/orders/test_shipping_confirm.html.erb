@@ -1,0 +1,15 @@
+<% form_tag '/orders/receive_shipping_confirmation' do %>
+  <table ID="Table1">
+    <tr>
+      <td>Enter XML</td>
+      <td>
+        <TEXTAREA rows=10 cols=100 id=textarea1 name="xmlStrShipping"><%= @xml %></TEXTAREA>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td align="right"> <input type="submit"
+                                value="Submit" class="button" ID="Submit1" NAME="Submit1"></td>
+    </tr>
+  </table>
+<% end %>

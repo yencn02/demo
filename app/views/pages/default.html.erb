@@ -1,0 +1,56 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "swfobject" %>
+  <%= javascript_include_tag "jwplayer" %>
+<% end %>
+<div class="content partial">
+  <div id="wrapper-video" style="width: 675px; height: 380px;">
+    <div id="video" style="margin-bottom: 10px;">      
+        <div id="video_home" style="display: none;">true</div>
+    </div>
+  </div>
+
+  <div class="box new-videos clearfix">
+    <h1>New Videos</h1>
+    <h2><%= link_to 'See all Videos &raquo;', videos_path %></h2>
+
+    <div class="showcase grey-box-gradient"  style="border: 2px inset #6C6C6C">
+      <% Video.by_filter('recent').demo_video(false).all(:limit => 3).each do |video| -%>
+        <div class="video">
+          <div class="image">
+            <%= link_to image_tag(image_source(video.image_large_path), {:alt=> video.title}), video %>
+          </div>
+          <p class="title"><strong><%= link_to video.title, video %></strong></p>
+          <p><%= link_to excerpt(video.description.to_s, "", :radius => 76), video %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  <% if current_user_session.blank? %>
+    <%= render :partial => 'sections/login' %>
+  <% end %>
+
+  <div class="box">
+    <h2>What is a Virtual Active Workout?</h2>
+    <p class="grey-box-gradient">
+      Virtual Active is a scenic video experience that you watch during your cardio workout. While you run, walk, or bike on your cardio machine, our videos lead you to beautiful destinations around the world.<br/><br/>
+      If you choose a guided workout, our on-camera trainer will join you on your journey, helping you to get better results from your cardio workouts.
+      </p>
+  </div>
+
+  <%= render :partial => 'sections/cart', :locals => {:items => @cart_items} %>
+  <%= render :partial => 'sections/video_packs', :local => {:video_packs => @video_packs} %>
+
+  <div class="box">
+    <h2>Cardio Platform:</h2>
+    <ul>
+      <% @feature_categories.each do |category| %>
+        <li class="grey-box-gradient">
+          <%= link_to "#{category.name} Videos", search_path(:category => category.name) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

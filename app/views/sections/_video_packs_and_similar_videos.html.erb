@@ -1,0 +1,8 @@
+<div class="section">
+  <div class="tabbed-header clearfix">
+    <span class="left selected"><%= link_to 'Video Packs' %></span>
+    <span class="left"><%= link_to 'Similar Videos' %></span>
+  </div>
+
+  <%= render :partial => 'sections/video_pack', :collection => VideoPack.all(:limit => 3, :order => 'created_at DESC') %>
+</div>

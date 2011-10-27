@@ -1,0 +1,44 @@
+<%= render :partial => 'sections/floating_menu' %>
+
+<div id="users-shipping-address" class="content partial">
+  <div id="wrapper" class="red-box clearfix">
+    <div class="clearfix">
+      <h1 class="page-title">Checkout / Shipping</h1>
+    </div>
+    <% if @address_books.size > 0 %>
+      <div class="instruction">
+        Choose a shipping address, or enter a new one.
+      </div>
+    <% end %>
+    <% @address_books.each_with_index do |address, i| %>
+      <div id="address-<%= (i % 2) + 1 %>" class="grey-box static-info-box">
+        <h2>Location <%= i + 1 %></h2>
+        <div id="address_<%= address.id %>">
+          <%= render :partial => 'shipping_address', :locals => {:address => address}  %>
+        </div>
+      </div>
+    <% end %>
+    <% if @address_books.size > 0 %>
+      <div class="clearfix">&nbsp;</div>
+    <% end %>
+    <% form_remote_for @address_book, :html => {:class => "typical" }, :url => set_shipping_info_cart_path do |form| %>
+      <div id="message-wraper" style="display:none"></div>
+      <% if @address_books.size == 0 %>
+        <div class="instruction">
+          Enter your shipping address.
+        </div>
+      <% end %>
+      <%= render :partial => 'shipping_address_form', :locals => {:form => form} %>
+      <div class="add-new-button-wrapper">
+        <input id="add-new-button" type="submit" value="Ship to this Address" class="blue-button submit" />
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div id="users-shipping-address-sidebar" class="sidebar">
+  <%= render :partial => 'sections/cart_summary', :locals => {:cart => @cart} %>
+</div>
+<%= address_to_js(@billing_address) %>
+<%= address_books_to_js(@address_books) %>
+<%= load_states(Carmen::STATES) %>

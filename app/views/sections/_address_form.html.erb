@@ -1,0 +1,93 @@
+
+  <table>
+    <tr>
+      <td width="150" class="right">
+        <%= form.label :nick_name %>
+      </td>
+      <td>
+        <%= form.text_field :nick_name, :size => "20" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        <%= form.label :first_name %>
+      </td>
+      <td>
+        <%= form.text_field :first_name, :size => "20"  %>
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        <%= form.label :last_name %>
+      </td>
+      <td>
+        <%= form.text_field :last_name, :size => "20"  %>
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        <%= form.label :email %>
+      </td>
+      <td>
+        <%= form.text_field :email, :size => "20"  %>
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        <%= form.label :address1, "Address (1)" %>
+      </td>
+      <td>
+        <%= form.text_field :address1, :size => "50" %>
+        Street address, P.O box, company name, c/o
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        <%= form.label :address1, "Address (2)" %>
+      </td>
+      <td>
+        <%= form.text_field :address2, :size => "50" %>
+        Apartment, suite, unit, building, floor, etc.
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        <%= form.label :city %>
+      </td>
+      <td>
+        <%= form.text_field :city, :size => "25" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        <%= form.label :state, "State/Province/Region"%>
+      </td>
+      <td>
+        <%= form.text_field :state, :size => "15" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        <%= form.label :zipcode, "Zip" %>
+      </td>
+      <td>
+        <%= form.text_field :zipcode, :size => "20" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        <%= form.label :country %>
+      </td>
+      <td>
+        <%= form.country_select :country %>
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        <%= form.label :phone, "Phone number" %>
+      </td>
+      <td align="right">
+        <%= form.text_field :phone, :size => "15" %>
+      </td>
+    </tr>
+  </table>

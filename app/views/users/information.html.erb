@@ -1,0 +1,23 @@
+<%= render :partial => 'sections/floating_menu' %>
+
+<div id="users-information" class="content partial">
+  <div id="wrapper" class="red-box clearfix">    
+    <div id="title" class="clearfix">
+      <h1>My Account / Information</h1>      
+    </div>
+
+    <% form_for @user, :url => account_path do |form| %>
+      <%= form.error_messages %>
+      <%= render :partial => "form", :object => form %>
+      <div>
+        <label>&nbsp;</label>
+        <%= form.submit "Save Changes", :class => 'blue-button' %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<div id="users-cart-sidebar" class="sidebar">
+  <%= render :partial => 'sections/cart_summary', :locals => {:cart => @cart} %>
+</div>

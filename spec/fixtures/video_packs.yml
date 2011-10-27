@@ -1,0 +1,13 @@
+new_york_city:
+  title: New York City
+  slug: new-york-city
+  description: Pack of videos from around New York City.
+  published_at: 2010-04-12
+  purchase_count: 18
+
+california:
+  title: California
+  slug: california
+  description: Pack of videos from around California.
+  published_at: 2010-03-12
+  purchase_count: 20

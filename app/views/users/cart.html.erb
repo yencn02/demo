@@ -1,0 +1,67 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "jquery.numeric" %>
+<% end %>
+<%= render :partial => 'sections/floating_menu' %>
+<div id="users-cart" class="content partial">
+  <div class="red-box list-browser">
+    <div id="title" class="clearfix">
+      <h1 class="page-title">My Account / Shopping Cart</h1>
+      <%= will_paginate @line_items, :previous_label => "Previous", :next_label => "Next" %>
+    </div>
+
+    <% form_for :cart, :url => update_items_cart_path do |f| %>      
+      <div id="videos" class="grey-box clearfix grey-box-gradient" style="padding-left: 35px;">
+        <% if @cart.empty? -%>
+          <h2>Your shopping cart is empty.</h2>
+        <% else -%>
+          <% last_index = @line_items.size %>
+          <% @line_items.each_with_index do |line_item, index| %>
+            <% if line_item and product = line_item.cart_product %>
+              <div class="fragment clearfix <%= "last" if index == last_index -1 %>" id="item_<%= line_item[:price_id] %>">
+                <%= link_to image_tag(image_source(product.image_medium_path), { :alt => product.title, :class => "medium-frame" }), product, :class => "thumb" %>
+                <div class="description">
+                  <h2 class="medium-frame-title"><%= product.title %> <% if product.class.name == "VideoPack" %>(Pack)<% end %> </h2>
+                  <p><%= product.description %></p>
+                  <p>Format: <strong><%= line_item.product.name %></strong></p>
+                  <p>Price: <strong><%= line_item.price.amount.format %></strong></p>
+                  <p class="quantity">
+                    <label>Quantity:</label>
+                    <input class="numeric" type="text" name="cart[<%= line_item[:price_id] %>]" value="<%= line_item[:quantity] %>" size="1" value="2"/>
+                  </p>
+                  <p>Subtotal: <strong><%= line_item.subtotal.format %></strong></p>
+                </div>
+                <div class="edit">
+                  <p><%= link_to "Remove", remove_item_cart_path(:price_id => line_item[:price_id]) %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %> <!--end if-->
+        <% end %> <!--end each-->
+      </div>
+
+      <% unless @cart.empty? -%>
+        <div id="button">
+          <div class="summary">
+            <p>Total items: <strong><%= @cart.total_items %></strong></p>
+            <p class="last">Total cost: <strong><%= @cart.total.format %></strong></p>
+          </div>
+          <% if @current_user %>
+           <input type="button" name="checkout" value="Proceed to Checkout" class="blue-button" id="user-id" />
+          <% else %>
+           <a href="#login-no-download<%#= @cart.has_download_videos? ? "#login-box" : "#login-no-download" %>" rel="facebox" title="Proceed to Checkout">
+            <input type="button" name="checkout" value="Proceed to Checkout" class="blue-button" />
+           </a>
+          <% end %>
+          <input id="action" type="hidden" name="action_" value="save_changes"/>
+          <input id="save_changes" type="submit" name="commit" value="Save Changes" class="blue-button"/>
+          <input id="continue" type="submit" name="commit" value="Continue Shopping" class="blue-button"/>
+        </div>
+      <% end %>
+    <% end %>     
+    <!--end form-->
+    <div class="clearfix">&nbsp;</div>
+  </div>
+</div>
+<div id="users-cart-sidebar" class="sidebar">
+  <%= render :partial => 'sections/cart_summary', :locals => {:cart => @cart} %>
+</div>

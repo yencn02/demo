@@ -1,0 +1,17 @@
+<div class="box videos">
+  <h2>Similar Videos</h2>
+  <div class="grey-box">
+    <% if videos.blank? %>
+      No video Similar
+    <% else %>
+      <% videos.each do |video| %>
+      <div class="item clearfix">
+        <h3><%= video.title %></h3>
+        <%= link_to image_tag(image_source(video.image_thumb_path), {:alt=> video.title}), video %>
+        <span><%= duration_from_seconds video.duration_in_seconds %></span>
+        <span><%= link_to "See details", video %></span>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

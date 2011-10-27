@@ -1,0 +1,34 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "swfobject" %>
+  <%= javascript_include_tag "jwplayer" %>
+<% end %>
+
+<div class="clearfix">&nbsp;</div>
+<div id="pages-howto" class="content partial site-info">
+  <div class="red-box">
+    <h1 class="page-title">How To Use Virtual Active</h1>
+
+    <!--<div id="player">
+      <img src="/images/video-player.gif" width="592px" height="370px" alt="video" />
+    </div> -->
+
+    <div id="player">
+      <div id="video">    
+          <div id="video_url" style="display: none;"><%= @video_url %></div>
+          <div id="video_howto" style="display: none;">true</div>
+      </div>
+    </div>
+
+    <div class="grey-box">
+      <p>Virtual Active is a virtual trail experience that transports you to exciting locations around the world, making your training more enjoyable and more effective.</p>
+      <p>In a Basic workout, you can enjoy the scenery while you exercise at your own pace.  In a Guided workout, a Virtual Active trainer appears on screen to help structure your workout.  The trainer will tell you to vary your speed and the resistance of your machine to reach a target RPE ('Rate of Perceived Exertion'). </p>
+      <p>RPE is an individual scale, and it's your responsibility to know your limits.  The target RPE is only a suggestion, and you should never push yourself in a way that makes you feel unsafe or unstable on your equipment.</p>
+      <p>Please enjoy the trip, and thanks for choosing Virtual Active.</p>
+    </div>
+  </div>
+</div>
+
+<div id="pages-howto-sidebar" class="sidebar">
+  <%= render :partial => 'sections/cart', :locals => { :items => @cart_items } %>
+  <%= render :partial => 'sections/video_packs', :locals => { :video_packs => @video_packs } %>
+</div>
